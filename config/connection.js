@@ -1,8 +1,10 @@
+// Import the sequelize constructor from the library
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
 let sequelize;
 
+// Checks if JAWSDB_URL exists, and if yes, creates new Sequelize or creates with local .env
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
