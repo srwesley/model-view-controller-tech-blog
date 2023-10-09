@@ -64,5 +64,5 @@ app.use(function (req, res, next) {
 // Every time the server restarts, it forces true for cookies to restart
 // False when program is ready
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`\nListening in on port ${PORT}. Visit http://localhost${PORT} and create an account!`));
+    app.listen(PORT, () => console.log(`\nListening in on port ${PORT}. Visit http://localhost:${PORT} and create an account!`));
 });

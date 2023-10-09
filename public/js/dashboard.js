@@ -53,7 +53,7 @@ const updateButtonHandler = async (event) => {
     const contents = document.querySelector("#post-content").value.trim();
     const id = document.querySelector("#post-id").value.trim();
 
-    const response = await fetch(`/api/blogPost/update${id}`, {
+    const response = await fetch(`/api/blogPost/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

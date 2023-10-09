@@ -9,12 +9,13 @@ router.post("/", async (req, res) => {
         const userData = await User.create(req.body);
 
         req.session.save(() => {
-            req.session.user_id;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
 
             res.status(200).json(userData);
         });
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
@@ -22,12 +23,12 @@ router.post("/", async (req, res) => {
 // Validates if email and password exist in the database, and returns an error 400 if not valid
 router.post("/login", async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        const userData = await User.findOne({ where: { name: req.body.name } });
 
         if (!userData) {
             res
                 .status(400)
-                .json({ message: "Incorrect email or password, please try again" });
+                .json({ message: "Incorrect name or password, please try again" });
             return;
         }
 
@@ -36,7 +37,7 @@ router.post("/login", async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: "Incorrect email or password, please try again" });
+                .json({ message: "Incorrect name or password, please try again" });
             return;
         }
 
@@ -47,6 +48,7 @@ router.post("/login", async (req, res) => {
             res.json({ user: userData, message: "You are now logged in!" });
         });
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
