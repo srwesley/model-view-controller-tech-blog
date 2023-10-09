@@ -21,6 +21,7 @@
     box-sizing: content-box;
     height: 0;
     overflow: visible;
+    /* 2 */
   }
 
   pre {
@@ -257,12 +258,12 @@
   }
   
   a {
-    color: #1b89bc;
+    color: #1bbc86;
     text-decoration: none;
   }
   
   a:hover {
-    color: #065b83;
+    color: #179e71;
     text-decoration: underline;
   }
   
@@ -749,7 +750,7 @@
   }
   
   .text-link {
-    color: #1b89bc !important;
+    color: #1bbc86 !important;
   }
   
   /* BACKGROUND UTILS */
@@ -846,12 +847,12 @@
   }
   
   .btn.btn-primary {
-    background-color: #2d3e50;
+    background-color: #13835d;
     color: #d9e9e8;
   }
   
   .btn.btn-primary:hover {
-    background-color: #57779a;
+    background-color: #7ad6b7;
   }
   
   .btn.btn-danger {
